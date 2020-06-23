@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "courses",
+  "info": {
+    "name": "courses"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "program": {
+      "via": "courses",
+      "model": "programs"
+    },
+    "sections": {
+      "collection": "sections",
+      "via": "course"
+    },
+    "course_code": {
+      "type": "string"
+    },
+    "overview": {
+      "type": "richtext"
+    }
+  }
+}

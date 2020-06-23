@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "programs",
+  "info": {
+    "name": "programs"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "courses": {
+      "collection": "courses",
+      "via": "program"
+    },
+    "department": {
+      "model": "departments",
+      "via": "programs"
+    },
+    "overview": {
+      "type": "richtext"
+    },
+    "credential": {
+      "type": "string"
+    },
+    "credits": {
+      "type": "integer"
+    },
+    "offered_on": {
+      "type": "string"
+    }
+  }
+}

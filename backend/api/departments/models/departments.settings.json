@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "departments",
+  "info": {
+    "name": "departments"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": false,
+      "unique": true
+    },
+    "programs": {
+      "via": "department",
+      "collection": "programs"
+    }
+  }
+}

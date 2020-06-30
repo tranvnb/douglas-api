@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "clubs",
+  "info": {
+    "name": "clubs"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": false,
+      "unique": true
+    },
+    "email": {
+      "type": "email",
+      "unique": true
+    },
+    "president": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "location": {
+      "type": "string"
+    },
+    "club_type": {
+      "type": "enumeration",
+      "enum": [
+        "academic_and_faculty",
+        "sport_and_fitness",
+        "art_and_culture",
+        "general_interest",
+        "activist_and_partisan",
+        "religion_and_spirituality"
+      ]
+    }
+  }
+}

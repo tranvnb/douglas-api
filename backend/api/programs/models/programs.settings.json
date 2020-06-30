@@ -13,8 +13,8 @@
       "type": "string"
     },
     "courses": {
-      "collection": "courses",
-      "via": "program"
+      "via": "program",
+      "collection": "courses"
     },
     "department": {
       "model": "departments",

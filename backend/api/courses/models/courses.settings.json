@@ -13,8 +13,8 @@
       "type": "string"
     },
     "program": {
-      "via": "courses",
-      "model": "programs"
+      "model": "programs",
+      "via": "courses"
     },
     "sections": {
       "collection": "sections",
@@ -24,6 +24,9 @@
       "type": "string"
     },
     "overview": {
+      "type": "richtext"
+    },
+    "prerequisites": {
       "type": "richtext"
     }
   }

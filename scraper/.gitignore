@@ -1,0 +1,8 @@
+#Ignore env folder
+venv
+
+#Ignore pycache
+src/courses/__pycache__
+
+#Ignore package foler
+src/douglasscraper.egg-info 

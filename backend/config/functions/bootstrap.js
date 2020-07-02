@@ -14,9 +14,8 @@ const setAuthenticatedUserPermissions = async (strapi) => {
   const authenticatedUsers = await strapi
     .query("role", "users-permissions")
     .findOne({ type: "authenticated" });
-
   authenticatedUsers.permissions.forEach((permission) => {
-    if (permission.enabled === false) {
+    if (permission.type === "application") {
       const newPermission = permission;
       newPermission.enabled = true;
       strapi

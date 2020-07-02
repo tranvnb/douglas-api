@@ -113,6 +113,7 @@ exports
 build
 
 ############################
-# Strapi
+# Swagger documentation
 ############################
 /extensions/**/documentation
+/api/**/documentation

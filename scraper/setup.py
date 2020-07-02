@@ -24,23 +24,20 @@ def read(*names, **kwargs):
 
 setup(
     name='douglasscraper',
-    version='0.1.0',
-    license='BSD 2-Clause License',
-    description='An example package. Generated with https://github.com/ionelmc/cookiecutter-pylibrary',
+    version='0.1.0',    
+    description='Sample of Python package',
     #long_description='%s\n%s' % (
     #    re.compile('^.. start-badges.*^.. end-badges', re.M | re.S).sub('', read('README.rst')),
     #    re.sub(':[a-z]+:`~?(.*?)`', r'``\1``', read('CHANGELOG.rst'))
     #),
     author='Brian Vo',
-    author_email='vnbaotran@gmail.com',
-    #url='https://github.com/ionelmc/python-nameless',
+    author_email='vnbaotran@gmail.com',    
     packages=find_packages('src'),
     package_dir={'': 'src'},
     py_modules=[splitext(basename(path))[0] for path in glob('src/*.py')],
     include_package_data=True,
     zip_safe=False,
-    classifiers=[
-        # complete classifier list: http://pypi.python.org/pypi?%3Aaction=list_classifiers
+    classifiers=[        
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
@@ -63,13 +60,11 @@ setup(
         'Topic :: Utilities',
     ],
     keywords=[
-        # eg: 'keyword1', 'keyword2', 'keyword3',
+        # eg: 'douglas', 'course', 'open api',
     ],
     install_requires=[
-        #'clint',
-        #'lxml',
-        #'psycopg2',
         'requests',
+		'beautifulsoup4',
         #'SQLAlchemy',
         # eg: 'aspectlib==1.1.1', 'six>=1.7',
     ],
@@ -81,6 +76,7 @@ setup(
     entry_points={
         'console_scripts': [
             'courses = courses:main',
+            'programs = programs:main'
         ]
     },
 )

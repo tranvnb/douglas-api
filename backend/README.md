@@ -2,23 +2,25 @@
 
 ## How to start
 
-
 ```
 npm i
 touch .env
 ```
 
-In the `.env` file, enter:
+**You do not need to create a .env file when in a development environment. It is mostly used for storing your database credentials.**
+
+But if deploying in production, in the `.env` file, enter:
 
 ```
-DATABASE_HOST=your_postgres_db_host
-DATABASE_PORT=usually_this_is_5432
-DATABASE_NAME=your_postgres_db_name
-DATABASE_USERNAME=your_postgres_user
-DATABASE_PASSWORD=your_postgres_pw
+DATABASE=postgres
+DATABASE_HOST=your_postgres_url_from_amazon_web_services
+DATABASE_PORT=5432
+DATABASE_NAME=your_postgres_database_name
+DATABASE_USERNAME=your_postgres_database_username
+DATABASE_PASSWORD=your_postgres_database_password
 ```
 
-Enter `strapi develop`, and it should automatically load your `.env` files as Strapi launches. This will launch the Strapi admin in development mode. You are free to edit content types and plugins in this mode.
+Type `npm run develop` to launch the Strapi admin in development mode. You are free to edit content types and plugins in this mode.
 
 To run Strapi in production mode, run the server.js file. For this, a process manager, such as PM2, is recommended. You can simply run it like `NODE_ENV=production pm2 start server.js --node-args="-r dotenv/config" --name="douglas-api"`. This will cause Strapi to run in production mode with the environment variables loaded.
 

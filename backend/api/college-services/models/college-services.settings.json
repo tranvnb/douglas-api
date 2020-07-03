@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "college_services",
+  "info": {
+    "name": "college services"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

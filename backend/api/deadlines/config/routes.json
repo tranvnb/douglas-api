@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/deadlines",
+      "handler": "deadlines.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/deadlines/count",
+      "handler": "deadlines.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/deadlines/:id",
+      "handler": "deadlines.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/deadlines",
+      "handler": "deadlines.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/deadlines/:id",
+      "handler": "deadlines.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/deadlines/:id",
+      "handler": "deadlines.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

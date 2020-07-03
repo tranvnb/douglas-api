@@ -1,0 +1,61 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sections",
+  "info": {
+    "name": "sections"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "professor": {
+      "via": "sections",
+      "model": "professors"
+    },
+    "course": {
+      "via": "sections",
+      "model": "courses"
+    },
+    "start_time": {
+      "type": "time",
+      "unique": false
+    },
+    "end_time": {
+      "required": false,
+      "private": false,
+      "unique": false,
+      "type": "time"
+    },
+    "maximum_enrolment": {
+      "type": "integer"
+    },
+    "actual_enrolment": {
+      "type": "integer"
+    },
+    "remaining_enrolment": {
+      "type": "integer"
+    },
+    "actual_waitlist": {
+      "type": "integer"
+    },
+    "building": {
+      "type": "string"
+    },
+    "room": {
+      "type": "string"
+    },
+    "days": {
+      "type": "string"
+    },
+    "semester_start": {
+      "type": "date"
+    },
+    "semester_end": {
+      "type": "date"
+    }
+  }
+}

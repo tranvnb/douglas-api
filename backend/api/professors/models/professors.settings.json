@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "professors",
+  "info": {
+    "name": "professors"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "sections": {
+      "collection": "sections",
+      "via": "professor"
+    },
+    "email": {
+      "type": "string"
+    }
+  }
+}

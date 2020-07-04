@@ -181,21 +181,30 @@ class Program:
             stream1.append(self.extract_course_detail(row_tags[index], 2, 13))
             index += 1
 
-        print(index)
+
         for item in stream1:
             print(item)
+
+    def post_all_data_to_strapi(self, data = []):
+        #there should be a call to post all data to Strapi api service, but I have not finished yet :)
+        # so I print them out to console instead
+        for item in data:
+            print(item)
+        return
 
     def extract_all_courses_of_program(self, program_id):
         if program_id in self.supported_program:
             # self.PBDCIS_program()
+            print("Scraping program: " + sys.argv[1])
             func = getattr(self, program_id + "_program")
-            func()    
+            func()
+        else:
+            print("The program " + program_id + " has not been supported yet")
 
     @staticmethod
     def run():
         if sys.argv[1] is None:
             print("You have to specify the program Id.")
-        else:
-            print("Scraping program: " + sys.argv[1])
+        else:        
             pg = Program()
             pg.extract_all_courses_of_program(sys.argv[1])

@@ -4,5 +4,5 @@ class Course:
 		self.courseId = courseId
 
 	@staticmethod
-	def run():
+	def run():		
 		return None

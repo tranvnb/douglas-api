@@ -181,7 +181,7 @@ class Program:
             stream1.append(self.extract_course_detail(row_tags[index], 2, 13))
             index += 1
 
-
+        print("this is all courses of program")
         for item in stream1:
             print(item)
 

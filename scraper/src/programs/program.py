@@ -202,8 +202,8 @@ class Program:
             print("The program " + program_id + " has not been supported yet")
 
     @staticmethod
-    def run():
-        if sys.argv[1] is None:
+    def run():        
+        if len(sys.argv) == 1:
             print("You have to specify the program Id.")
         else:        
             pg = Program()

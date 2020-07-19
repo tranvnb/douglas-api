@@ -1,5 +1,3 @@
-import xml
-
 import requests
 import re
 from bs4 import BeautifulSoup
@@ -24,13 +22,13 @@ def runClubTypes(url):
     print(url + 'page/' + str(i))
     while requests.get(url + 'page/' + str(i)).ok:
         req = requests.get(url + 'page/' + str(i))
-        beauty = BeautifulSoup(req.content, 'html5lib')
+        beauty = BeautifulSoup(req.content, 'html.parser')
         i += 1
         for club_item in beauty.findAll('a', attrs={'class': 'grid-item'}):
             print(club_item.get('href'))
             request = requests.get(club_item.get("href"))
             if request.ok:
-                beautify = BeautifulSoup(request.content, "html5lib")
+                beautify = BeautifulSoup(request.content, "html.parser")
                 club["name"] = club_item.get("href")[45:-1]
                 club["email"] = beautify.find("div", attrs={"class": "campaign-contact-wrapper"}).a["href"][7:].strip()
                 elementDiv = beautify.find("div", attrs={"class": "campaign-contact-wrapper"})
@@ -58,7 +56,7 @@ def cleanhtml(raw_html):
 
 
 if r.ok:
-    soup = BeautifulSoup(r.content, 'html5lib')
+    soup = BeautifulSoup(r.content, 'html.parser')
     grid = soup.find('ul', attrs={'class': 'block-grid-3'})
 
     for link in grid.findAll('a', attrs={'class': 'grid-item'}):

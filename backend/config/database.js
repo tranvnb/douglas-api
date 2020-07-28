@@ -1,4 +1,4 @@
-const databaseInit = (env) => {
+/*const databaseInit = (env) => {
   if (!env("DATABASE") || env("DATABASE") !== "postgres") {
     console.log("DATABASE in .env not found/equal to 'postgres'. Using SQLite");
     return {
@@ -8,7 +8,7 @@ const databaseInit = (env) => {
   }
 
   console.log("Using postgres");
-  return {
+  var config = {
     client: env("DATABASE"),
     host: env("DATABASE_HOST"),
     port: env.int("DATABASE_PORT"),
@@ -17,6 +17,8 @@ const databaseInit = (env) => {
     password: env("DATABASE_PASSWORD"),
     ssl: env.bool("DATABASE_SSL", false),
   };
+  
+  return config;
 };
 
 module.exports = ({ env }) => ({
@@ -26,6 +28,26 @@ module.exports = ({ env }) => ({
       connector: "bookshelf",
       settings: databaseInit(env),
       options: {},
+    },
+  },
+});
+*/
+module.exports = ({ env }) => ({
+  defaultConnection: 'default',
+  connections: {
+    default: {
+      connector: 'bookshelf',
+      settings: {
+        client: 'postgres',
+        host: env('DATABASE_HOST', 'postgres'),
+        port: env.int('DATABASE_PORT', 5432),
+        database: env('DATABASE_NAME', 'douglas_api'),
+        username: env('DATABASE_USERNAME', 'default'),
+        password: env('DATABASE_PASSWORD', 'secret'),
+      },
+      options: {
+        ssl: false,
+      },
     },
   },
 });

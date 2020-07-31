@@ -1,8 +1,11 @@
 from bs4 import BeautifulSoup
 import requests
-import os
 import re
 import sys
+import os.path
+sys.path.append(
+    os.path.abspath(os.path.join(os.path.dirname(__file__), "../authen")))
+from authentication import Authentication
 class Program:
 
     #PBDCIS: https://www.douglascollege.ca/programs-courses/catalogue/programs/PBDCIS
@@ -202,7 +205,7 @@ class Program:
             print("The program " + program_id + " has not been supported yet")
 
     @staticmethod
-    def run():        
+    def run():             
         if len(sys.argv) == 1:
             print("You have to specify the program Id.")
         else:        

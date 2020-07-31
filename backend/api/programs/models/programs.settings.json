@@ -12,10 +12,6 @@
     "name": {
       "type": "string"
     },
-    "courses": {
-      "via": "program",
-      "collection": "courses"
-    },
     "department": {
       "model": "departments",
       "via": "programs"
@@ -31,6 +27,10 @@
     },
     "offered_on": {
       "type": "string"
+    },
+    "courses": {
+      "via": "programs",
+      "collection": "courses"
     }
   }
 }

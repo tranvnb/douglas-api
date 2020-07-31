@@ -12,9 +12,10 @@
     "name": {
       "type": "string"
     },
-    "program": {
-      "model": "programs",
-      "via": "courses"
+    "programs": {
+      "collection": "programs",
+      "via": "courses",
+      "dominant": true
     },
     "sections": {
       "collection": "sections",

@@ -31,17 +31,18 @@ Assuming that you already have pip installed on your system, otherwise these bel
 1. Install pipenv and create .venv folder
 	```
 		$ pip install pipenv
-		$ PIPENV_VENV_IN_PROJECT=1 pipenv install
+		$ pipenv install --python 3
+		$ PIPENV_VENV_IN_PROJECT=1 pipenv install 
 	```
 2. Install all your required libraries from Pipfile.lock or add more libraries
 
 	```
-	    $ pipenv install
-	    $ pipenv install requests beautifulsoup4
+	    $ PIPENV_VENV_IN_PROJECT=1 pipenv install
+	    $ PIPENV_VENV_IN_PROJECT=1 pipenv install requests beautifulsoup4
 	```
 3. If you already have requirements.txt file, then import it 
 	```
-		$ pipenv install -r path/to/requirements.txt
+		$ PIPENV_VENV_IN_PROJECT=1 pipenv install -r path/to/requirements.txt
 	```
 
 4. Start working on virtual environment
